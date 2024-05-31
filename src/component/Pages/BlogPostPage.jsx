@@ -70,7 +70,7 @@ const BlogPostPage = () => {
             </button>
           </div>
         ) : (
-          <h1>Not Blog Found</h1>
+          <h1>No Blog Found</h1>
         )}
       </div>
     </div>
