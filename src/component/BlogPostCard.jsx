@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import CommentsSection from "./CommentSection";
 import { useRouter } from "next/router";
-const BlogPostCard = ({ title, date, author,id, content, isShowDetail, comment }) => {
-  const navigate  = useRouter()
-  const handleShowMore = (blogId)=> {
-     navigate.push(`/blog-details/${blogId}`)
-  }  
+const BlogPostCard = ({
+  title,
+  date,
+  author,
+  id,
+  content,
+  isShowDetail,
+  comment,
+}) => {
+  const navigate = useRouter();
+  const handleShowMore = (blogId) => {
+    navigate.push(`/blog-details/${blogId}`);
+  };
   return (
     <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4">
       <div className="px-6 py-4">
@@ -20,11 +28,11 @@ const BlogPostCard = ({ title, date, author,id, content, isShowDetail, comment }
             onClick={() => handleShowMore(id)}
             className="text-blue-500 hover:text-blue-700 mt-2"
           >
-             Show More
+            Show More
           </button>
         )}
       </div>
-      {isShowDetail && <CommentsSection  blogId={id}  allComment={comment}/>}
+      {isShowDetail && <CommentsSection blogId={id} allComment={comment} />}
     </div>
   );
 };

@@ -7,7 +7,7 @@ export const BlogContext = createContext(null);
 export const BlogProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [blogList, setBlogList] = useState(blogPosts);
-  console.log("first",blogList)
+
   useEffect(() => {
     if (searchQuery?.length > 0) {
       const filteredBlogs = blogPosts.filter((blog) =>
